@@ -22,7 +22,7 @@ const Dashboard = () => {
   };
 
   const totalList = async () => {
-    const totalUrl = "http://localhost:5000/allItems";
+    const totalUrl = "https://expensetrackerbackend-oy8r.onrender.com/allItems";
     const options = {
       method: "GET",
     };
@@ -69,7 +69,7 @@ const Dashboard = () => {
   }) => {
     try {
       const litems = { title, amount, category, date, payment };
-      const elurl = "http://localhost:5000/ExpenseList";
+      const elurl = "https://expensetrackerbackend-oy8r.onrender.com/ExpenseList";
       const options = {
         method: "POST",
         headers: {

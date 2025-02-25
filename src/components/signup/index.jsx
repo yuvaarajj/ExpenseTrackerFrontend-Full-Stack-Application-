@@ -16,7 +16,7 @@ const Signup = () => {
     }
 
     const userData = { email, password };
-    const url = "http://localhost:5000/register";
+    const url = "https://expensetrackerbackend-oy8r.onrender.com/register";
     const options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
