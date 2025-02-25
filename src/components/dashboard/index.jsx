@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 const Dashboard = () => {
-  const [cookies, removeCookie] = useCookies(["jwt_token"]);
+const [cookies, setCookie, removeCookie] = useCookies(["jwt_token"]);
+
   const [item, setItem] = useState([]);
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -18,7 +19,7 @@ const Dashboard = () => {
     removeCookie("jwt_token", { path: "/" });
     setTimeout(() => {
       navigate("/login");
-    }, 500);
+    }, 100);
   };
 
   const totalList = async () => {
