@@ -60,11 +60,11 @@ const Login = () => {
       <form action="" onSubmit={onSubmit} className="formcls">
         <p>
           <label htmlFor="name">Email:</label>
-          <input type="text" onChange={nameVal} value="yuva@gmail.com" id="name" />
+          <input type="text" onChange={nameVal} id="name" />
         </p>
         <p>
           <label htmlFor="pass">Password:</label>
-          <input type="password" name="password" onChange={passVal} value="yuva" id="pass" />
+          <input type="password" name="password" onChange={passVal} id="pass" />
         </p>
         <p>
           <input type="submit" value="submit" />
