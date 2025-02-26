@@ -90,6 +90,8 @@ const [cookies, setCookie, removeCookie] = useCookies(["jwt_token"]);
     }
   };
 
+  
+
   useEffect(() => {
     if (!cookies.jwt_token) {
       navigate("/login");
@@ -153,7 +155,7 @@ const [cookies, setCookie, removeCookie] = useCookies(["jwt_token"]);
                     <td>{e1.date}</td>
                     <td>{e1.payment}</td>
                     <td>
-                      <button className="delete-btn">Delete</button>
+                      <button className="delete-btn" >Delete</button>
                     </td>
                   </tr>
                 ))}

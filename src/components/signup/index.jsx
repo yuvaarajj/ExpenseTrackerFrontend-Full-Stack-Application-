@@ -3,19 +3,15 @@ import { useNavigate } from "react-router-dom";
 import "./index.css";
 
 const Signup = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
 
   const handleSignup = async (event) => {
     event.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
 
-    const userData = { email, password };
+    const userData = { name, email, password };
     const url = "https://expensetrackerbackend-oy8r.onrender.com/register";
     const options = {
       method: "POST",
@@ -26,6 +22,7 @@ const Signup = () => {
     try {
       const response = await fetch(url, options);
       const data = await response.json();
+      console.log(response)
       if (response.ok) {
         alert("Signup successful!");
         navigate("/login");
@@ -44,6 +41,14 @@ const Signup = () => {
         <h2 className="signup-title">Create an Account</h2>
         <form onSubmit={handleSignup} className="signup-form">
           <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="signup-input"
+            required
+          />
+          <input
             type="email"
             placeholder="Email"
             value={email}
@@ -56,14 +61,6 @@ const Signup = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="signup-input"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
             className="signup-input"
             required
           />
